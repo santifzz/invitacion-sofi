@@ -10,6 +10,8 @@
 
 body {
 	background-image: url('../img/brooklin-bridge.jpg'); /* Ruta de tu imagen */
+	background-color: rgba(0, 0, 0, 0.5);
+	background-blend-mode: darken;
   	background-size: cover; /* Hace que la imagen cubra toda la pantalla */
   	background-position: center; /* Centra la imagen */
   	background-repeat: no-repeat; /* Evita que se repita */
@@ -100,6 +102,8 @@ body {
 	height: calc(var(--vh, 1vh) * 108);
 	width: 100%;
 	background: inherit;
+	background-color: rgba(0, 0, 0, 0.5);
+ 	background-blend-mode: darken;
 	position: relative;
 }
 
@@ -273,7 +277,7 @@ section {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background-color: #0007;
+	/* background-color: #0007;  */
 }
 
 .cuenta-regresiva p {
@@ -293,7 +297,7 @@ header {
 	font-weight: 500;
 	color: #f2f2f2;
 	flex: 2 0 auto;
-	text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.9), -5px -5px 3px rgba(0, 0, 0, 0.9);
+	/* text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.9), -5px -5px 3px rgba(0, 0, 0, 0.9); */
 }
 
 .box {
@@ -486,20 +490,6 @@ a.active {
 	}
 }
 
-/* .myLink {
-	position: absolute;
-	bottom: 5px;
-	font-size: min(17px, calc(calc(var(--vh) * 1.08) + 1vw));
-	width: 100%;
-	text-align: center;
-	background-color: transparent;
-}
-
-.myLink a {
-	text-decoration: none;
-	color: var(--gray);
-} */
-
 @keyframes bodyScroll {
 	to {
 		overflow-y: auto;
@@ -562,3 +552,4 @@ a.active {
 		color: #ffffff;
 	}
 }
+
