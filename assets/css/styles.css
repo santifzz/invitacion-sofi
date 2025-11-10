@@ -139,6 +139,16 @@ body {
 	top: 0;
 	height: calc(12% + 8vw);
 	max-height: 195px;
+
+	/* animacion */
+	opacity: 0;
+	fill: var(--gold);
+
+	-webkit-animation: appear 0.5s calc(12.8s - var(--time-chrome)) ease-out
+		forwards;
+	-o-animation: appear 0.5s calc(12.8s - var(--time-chrome)) ease-out forwards;
+	-moz-animation: appear 0.5s calc(12.8s - var(--time-chrome)) ease-out forwards;
+	animation: appear 0.5s calc(12.8s - var(--time-chrome)) ease-out forwards;
 }
 
 .div_mis_quince {
@@ -162,7 +172,7 @@ body {
 	stroke-linecap: round;
 }
 
-.write1 {
+/* .write1 {
 	stroke-dasharray: 6000;
 	stroke-dashoffset: 6000;
 
@@ -177,10 +187,10 @@ body {
 
 .write2 {
 	stroke-dasharray: 6000;
-	stroke-dashoffset: 6000;
+	stroke-dashoffset: 6000; */
 
-	/* 2.5s de diferencia */
-	-webkit-animation: animate-mavi 4.5s calc(11.8s - var(--time-chrome)) ease-out
+	/* 2.5s de diferencia */ 
+	/* -webkit-animation: animate-mavi 4.5s calc(11.8s - var(--time-chrome)) ease-out
 		forwards;
 	-o-animation: animate-mavi 4.5s calc(11.8s - var(--time-chrome)) ease-out
 		forwards;
@@ -188,7 +198,7 @@ body {
 		forwards;
 	animation: animate-mavi 4.5s calc(11.8s - var(--time-chrome)) ease-out
 		forwards;
-}
+}  */
 
 #mavi_white {
 	fill: #ffffff;
