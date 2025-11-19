@@ -128,91 +128,91 @@ window.onscroll = function () {
 };
 
 ////  Horizontal Scroll
-$(function () {
-	function showSlide(n) {
-		// n is relative position from current slide
+// $(function () {
+// 	function showSlide(n) {
+// 		// n is relative position from current slide
 
-		// unbind event listener to prevent retriggering
-		$body.unbind("mousewheel");
+// 		// unbind event listener to prevent retriggering
+// 		$body.unbind("mousewheel");
 
-		// increment slide number by n and keep within boundaries
-		currSlide = Math.min(Math.max(0, currSlide + n), $slide.length - 1);
+// 		// increment slide number by n and keep within boundaries
+// 		currSlide = Math.min(Math.max(0, currSlide + n), $slide.length - 1);
 
-		var displacment = $(window).width() * 0.85 * currSlide;
-		// translate slides div across to appropriate slide
-		$slides.css("transform", "translateX(-" + displacment + "px)");
-		// delay before rebinding event to prevent retriggering
-		setTimeout(bind, 500);
+// 		var displacment = $(window).width() * 0.85 * currSlide;
+// 		// translate slides div across to appropriate slide
+// 		$slides.css("transform", "translateX(-" + displacment + "px)");
+// 		// delay before rebinding event to prevent retriggering
+// 		setTimeout(bind, 500);
 
-		// change active class on link
-		$("a.active").removeClass("active");
-		$($(".nav_a")[currSlide]).addClass("active");
-	}
+// 		// change active class on link
+// 		$("a.active").removeClass("active");
+// 		$($(".nav_a")[currSlide]).addClass("active");
+// 	}
 
-	function bind() {
-		$body.bind("mousewheel", mouseEvent);
-	}
+// 	function bind() {
+// 		$body.bind("mousewheel", mouseEvent);
+// 	}
 
-	function mouseEvent(e, delta) {
-		// On down scroll, show next slide otherwise show prev slide
-		showSlide(delta >= 0 ? -1 : 1);
-		e.preventDefault();
-	}
+// 	function mouseEvent(e, delta) {
+// 		// On down scroll, show next slide otherwise show prev slide
+// 		showSlide(delta >= 0 ? -1 : 1);
+// 		e.preventDefault();
+// 	}
 
-	$("nav a").click(function (e) {
-		// When link clicked, find slide it points to
-		var newslide = parseInt($(this).attr("href")[1]);
-		// find how far it is from current slide
-		var diff = newslide - currSlide - 1;
-		showSlide(diff); // show that slide
-		e.preventDefault();
-	});
+// 	$("nav a").click(function (e) {
+// 		// When link clicked, find slide it points to
+// 		var newslide = parseInt($(this).attr("href")[1]);
+// 		// find how far it is from current slide
+// 		var diff = newslide - currSlide - 1;
+// 		showSlide(diff); // show that slide
+// 		e.preventDefault();
+// 	});
 
-	$(window).resize(function () {
-		// Keep current slide to left of window on resize
-		var displacment = $(window).width() * 0.85 * currSlide;
-		$slides.css("transform", "translateX(-" + displacment + "px)");
+// 	$(window).resize(function () {
+// 		// Keep current slide to left of window on resize
+// 		var displacment = $(window).width() * 0.85 * currSlide;
+// 		$slides.css("transform", "translateX(-" + displacment + "px)");
 
-		// document.documentElement.style.setProperty(
-		// 	"--vw",
-		// 	`${window.innerWidth * 0.01}px`
-		// );
-	});
+// 		// document.documentElement.style.setProperty(
+// 		// 	"--vw",
+// 		// 	`${window.innerWidth * 0.01}px`
+// 		// );
+// 	});
 
-	// cache
-	var $body = $(".scroll");
-	var currSlide = 0;
-	var $slides = $(".sections");
-	var $slide = $("section");
+// 	// cache
+// 	var $body = $(".scroll");
+// 	var currSlide = 0;
+// 	var $slides = $(".sections");
+// 	var $slide = $("section");
 
-	// give active class to first link
-	$($("nav a")[0]).addClass("active");
+// 	// give active class to first link
+// 	$($("nav a")[0]).addClass("active");
 
-	// add event listener for mousescroll
-	$body.bind("mousewheel", mouseEvent);
+// 	// add event listener for mousescroll
+// 	$body.bind("mousewheel", mouseEvent);
 
-	// add event listener for touch
-	var ts;
-	$body.bind("touchstart", function (e) {
-		ts = e.originalEvent.touches[0].clientX;
-	});
+// 	// add event listener for touch
+// 	var ts;
+// 	$body.bind("touchstart", function (e) {
+// 		ts = e.originalEvent.touches[0].clientX;
+// 	});
 
-	$body.bind("touchend", function (e) {
-		var te = e.originalEvent.changedTouches[0].clientX;
-		if (ts - 15 > te) {
-			showSlide(1);
-		} else if (te - 15 > ts) {
-			showSlide(-1);
-		}
-	});
+// 	$body.bind("touchend", function (e) {
+// 		var te = e.originalEvent.changedTouches[0].clientX;
+// 		if (ts - 15 > te) {
+// 			showSlide(1);
+// 		} else if (te - 15 > ts) {
+// 			showSlide(-1);
+// 		}
+// 	});
 
-	// document.addEventListener(
-	// 	"touchstart",
-	// 	function (e) {
-	// 		console.log(e.defaultPrevented); // will be false
-	// 		e.preventDefault(); // does nothing since the listener is passive
-	// 		console.log(e.defaultPrevented); // still false
-	// 	},
-	// 	Modernizr.passiveeventlisteners ? { passive: true } : false
-	// );
-});
+// 	// document.addEventListener(
+// 	// 	"touchstart",
+// 	// 	function (e) {
+// 	// 		console.log(e.defaultPrevented); // will be false
+// 	// 		e.preventDefault(); // does nothing since the listener is passive
+// 	// 		console.log(e.defaultPrevented); // still false
+// 	// 	},
+// 	// 	Modernizr.passiveeventlisteners ? { passive: true } : false
+// 	// );
+// });
