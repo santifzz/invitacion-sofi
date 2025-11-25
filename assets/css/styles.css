@@ -104,17 +104,6 @@ body {
 	
 }
 
-/* .letter {
-	height: calc(var(--vh, 1vh) * 108);
-	width: 100%;
-	background: inherit;
-	background-color: rgba(0, 0, 0, 0.5);
- 	background-blend-mode: darken;
-	position:relative;
-
-	
-
-} */
 
 .sticky_effect {
 	position: relative;
@@ -185,34 +174,6 @@ body {
 	stroke-linecap: round;
 }
 
-/* .write1 {
-	stroke-dasharray: 6000;
-	stroke-dashoffset: 6000;
-
-	-webkit-animation: animate-mavi 3.5s calc(9.3s - var(--time-chrome)) ease-in
-		forwards;
-	-o-animation: animate-mavi 3.5s calc(9.3s - var(--time-chrome)) ease-in
-		forwards;
-	-moz-animation: animate-mavi 3.5s calc(9.3s - var(--time-chrome)) ease-in
-		forwards;
-	animation: animate-mavi 3.5s calc(9.3s - var(--time-chrome)) ease-in forwards;
-}
-
-.write2 {
-	stroke-dasharray: 6000;
-	stroke-dashoffset: 6000; */
-
-	/* 2.5s de diferencia */ 
-	/* -webkit-animation: animate-mavi 4.5s calc(11.8s - var(--time-chrome)) ease-out
-		forwards;
-	-o-animation: animate-mavi 4.5s calc(11.8s - var(--time-chrome)) ease-out
-		forwards;
-	-moz-animation: animate-mavi 4.5s calc(11.8s - var(--time-chrome)) ease-out
-		forwards;
-	animation: animate-mavi 4.5s calc(11.8s - var(--time-chrome)) ease-out
-		forwards;
-}  */
-
 #mavi_white {
 	fill: #ffffff;
 }
@@ -265,9 +226,6 @@ body {
 	bottom: 30px;
 	display: flex;
 	flex-direction: column;
-
-	
-	
 }
 
 /* .scroll {
@@ -384,7 +342,7 @@ section p {
 	color: #f2f2f2;
 
 	margin: 0;
-	flex: 3 0 auto;
+	flex: 1 0 auto;
 }
 
 .espacio_btn {
@@ -622,7 +580,6 @@ a.active {
 
 .sections {
     width: 100%;
-
 }
 
 section {
@@ -638,15 +595,13 @@ section {
 	background-color: rgba(0, 0, 0, 0.5);
  	background-blend-mode: darken;
 	position:relative;
-
-	
-
 }
 
 section {
     background-image: none;
     background-color: transparent;
     background-attachment: scroll;
+	
 }
 
 body{
@@ -656,3 +611,18 @@ body{
 	background-attachment: fixed;
 }
 
+.line-regalo {
+	border-top: solid max(3px, 0.3vw) var(--gold);
+    width: min(calc(var(--vh) * 44), 70%);
+    flex: 2 0 auto;
+}
+
+.header-regalo{
+	width: 90%;
+    font-size: min(46px, 6vw);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: #f2f2f2;
+    flex: 1 0 auto;
+    /* text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.9), -5px -5px 3px rgba(0, 0, 0, 0.9); */
+}
