@@ -626,3 +626,44 @@ body{
     flex: 1 0 auto;
     /* text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.9), -5px -5px 3px rgba(0, 0, 0, 0.9); */
 }
+
+
+
+  /* Botón flotante de música  */
+#audioBtn{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 55px;
+    height: 55px;
+    background: var(--gold);
+    color:white;
+    font-size:26px;
+
+    /* ESTO ES LO QUE LO CENTRA */
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+    cursor:pointer;
+    z-index:10000;
+    transition:.25s;
+    box-shadow:0 0 10px #0008;
+}
+ /* Animación al pasar el mouse  */
+#audioBtn:hover{
+    /* transform: scale(1.15); */
+    background: var(--gold);
+    color:white;
+    /* box-shadow: 0 0 18px #e1b100b7; */
+}
+
+ /* En teléfonos más grande  */
+@media(max-width:800px){
+    #audioBtn {
+    	position: fixed;
+    	top: 25px;
+    	left: 25px;
+    }
+} 
