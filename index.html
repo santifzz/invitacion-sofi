@@ -89,18 +89,21 @@
     const iconPause = document.getElementById("iconPause");
     let activo = true;
 
-    // Fuerza reproducción automática (solo si el navegador lo permite)
-    window.addEventListener("DOMContentLoaded", () => {
-        audio.volume = 1;
-        audio.play().catch(() => {
-            // Si el navegador bloquea autoplay, se activa en el primer clic
-            window.addEventListener("click", activarSonido, { once:true });
-        });
+   // Si el navegador bloquea autoplay, se activa con clic o scroll
+window.addEventListener("DOMContentLoaded", () => {
+    audio.volume = 1;
+    audio.play().catch(() => {
+        // Habilitar audio cuando ocurra la primera interacción del usuario
+        window.addEventListener("click", activarSonido, { once:true });
+        window.addEventListener("scroll", activarSonido, { once:true }); // ← ESTE ES EL NUEVO
     });
+});
 
-    function activarSonido(){
-        audio.play();
-    }
+function activarSonido(){
+    audio.muted = false;
+    audio.play();
+}
+
 
     function toggleAudio(){
         if(activo){
