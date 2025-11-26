@@ -42,48 +42,81 @@
 		</script>
 	</head>
 
-	 <!-- Reproductor de música -->
+	  <!-- Reproductor de música 
 <audio id="musica" src="./audio/JAY-Z - Empire State Of Mind ft (mp3cut.net).mp3" autoplay loop muted></audio>
 
- <!-- Botón flotante control audio  -->
-<!-- <div id="audioBtn" onclick="toggleAudio()">▶</div> -->
-<div id="audioBtn" onclick="toggleAudio()">
-	<svg id="iconPlay" width="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-    <svg id="iconPause" width="24" viewBox="0 0 24 24" fill="white" style="display:none;"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
-</div>
+  Botón flotante control audio 
+<div id="audioBtn" onclick="toggleAudio()">▶</div>
+
 
 <script>
     const audio = document.getElementById("musica");
     const audioBtn = document.getElementById("audioBtn");
     let activo = false;
 
-    // function toggleAudio() {
-    //     if (!activo) {
-    //         audio.muted = false;
-    //         audio.play();
-    //         activo = true;
-    //         audioBtn.textContent = "⏸"; // pausa
-    //     } else {
-    //         audio.pause();
-    //         activo = false;
-    //         audioBtn.textContent = "▶"; // play
-    //     }
-    // }
-	function toggleAudio(){
-    if(activo){
-        audio.pause();
-        activo = false;
-        iconPlay.style.display = "block";
-        iconPause.style.display = "none";
-    } else {
-        audio.play();
-        activo = true;
-        iconPlay.style.display = "none";
-        iconPause.style.display = "block";
-    	}
-	}
+    function toggleAudio() {
+        if (!activo) {
+            audio.muted = false;
+            audio.play();
+            activo = true;
+            audioBtn.textContent = "⏸"; // pausa
+        } else {
+            audio.pause();
+            activo = false;
+            audioBtn.textContent = "▶"; // play
+        }
+    }
+</script>  -->
 
-</script> 
+
+<!-- version 2 -->
+
+<audio id="musica" src="./audio/JAY-Z - Empire State Of Mind ft (mp3cut.net).mp3" autoplay loop></audio>
+
+<div id="audioBtn" onclick="toggleAudio()">
+    <svg id="iconPlay" width="24" viewBox="0 0 24 24" fill="white" style="display:none;">
+        <path d="M8 5v14l11-7z"/>
+    </svg>
+
+    <svg id="iconPause" width="24" viewBox="0 0 24 24" fill="white">
+        <path d="M6 5h4v14H6zM14 5h4v14h-4z"/>
+    </svg>
+</div>
+
+<script>
+    const audio = document.getElementById("musica");
+    const iconPlay = document.getElementById("iconPlay");
+    const iconPause = document.getElementById("iconPause");
+    let activo = true;
+
+    // Fuerza reproducción automática (solo si el navegador lo permite)
+    window.addEventListener("DOMContentLoaded", () => {
+        audio.volume = 1;
+        audio.play().catch(() => {
+            // Si el navegador bloquea autoplay, se activa en el primer clic
+            window.addEventListener("click", activarSonido, { once:true });
+        });
+    });
+
+    function activarSonido(){
+        audio.play();
+    }
+
+    function toggleAudio(){
+        if(activo){
+            audio.pause();
+            activo = false;
+            iconPlay.style.display = "block";
+            iconPause.style.display = "none";
+        } else {
+            audio.play();
+            activo = true;
+            iconPlay.style.display = "none";
+            iconPause.style.display = "block";
+        }
+    }
+</script>
+
 
 
 	<body>

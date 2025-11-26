@@ -667,3 +667,34 @@ body{
     	left: 25px;
     }
 } 
+
+/* version 2  */
+
+#audioBtn{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 55px;
+    height: 55px;
+    background: var(--gold);
+    color:white;
+    font-size:26px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    cursor:pointer;
+    z-index:10000;
+    transition:.25s;
+    box-shadow:0 0 10px #0008;
+}
+
+#audioBtn:hover{
+    transform:scale(1.1);
+    
+    color:var(--gold);
+}
+
+#audioBtn svg {
+    pointer-events:none;
+}
