@@ -118,8 +118,16 @@
 </script> -->
 
 
+
 <body>
-	<audio src="./audio/JAY-Z - Empire State Of Mind ft (mp3cut.net).mp3" autoplay loop hidden></audio>
+	<!-- Pantalla de inicio -->
+	<div id="introScreen">
+    <p id="startBtn">Click aquí para ingresar</p>
+</div>
+
+<audio id="musica" src="./audio/LoveMeLikeYouDo.mp3" preload="auto" loop playsinline></audio>
+	
+	<!-- separador -->
 
 		<div id="firstAnimation">
 			<div class="envelope">
@@ -357,24 +365,12 @@
 								una posibilidad.
 								<br>
 								<br>
-								Alias: sofi.mp
+								Alias: sofi.mp.f
 							</p>
 							
 						</section>
 
-
 						<!-- fin section alias mercado pago -->
-
-						<!-- section dresscode -->
-						<!-- <section id="5">
-							<div class="line"></div>
-							<header>Código de vestimenta</header>
-							<p>
-								Elegante Sport
-							</p>
-							
-						</section> -->
-						<!-- fin section dresscode-->
 
 					</div>
 				</div>
@@ -400,7 +396,41 @@
 			src="assets/js/jquery.fancybox.min.js"
 		></script>
 
-		<!-- <audio src="./audio/JAY-Z - Empire State Of Mind ft. Alicia Keys.mp3" autoplay loop hidden></audio> -->
+		
+		<!-- <audio id="musica" src="./audio/EmpireStateOfMind.mp3" autoplay loop muted preload="auto"></audio> -->
 
+		<!-- <script>
+    const introScreen = document.getElementById("introScreen");
+    const audio = document.getElementById("musica");
+
+    introScreen.addEventListener("click", () => {
+        introScreen.style.opacity = "0";
+        setTimeout(() => introScreen.style.display = "none", 500);
+
+        audio.muted = false;
+        audio.play();
+    });
+</script> -->
+		<script>
+   			const intro = document.getElementById("introScreen");
+			const audio = document.getElementById("musica");
+			const body = document.body;
+
+			body.classList.add("blocked");   // Congela scroll pero no clics
+
+			document.getElementById("startBtn").onclick = () => {
+   				intro.style.opacity="0";
+    			setTimeout(()=>intro.remove(),600);
+
+    			audio.muted = false;
+    			audio.play();
+
+    			body.classList.remove("blocked");
+			}
+
+
+		</script>
+	
 	</body>
+
 </html>
