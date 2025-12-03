@@ -611,21 +611,23 @@ body{
 	background-attachment: fixed;
 }
 
-.line-regalo {
+/* .line-regalo {
 	border-top: solid max(3px, 0.3vw) var(--gold);
     width: min(calc(var(--vh) * 44), 70%);
     flex: 2 0 auto;
-}
+}  */
 
-.header-regalo{
+/* .header-regalo{
 	width: 90%;
     font-size: min(46px, 6vw);
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     color: #f2f2f2;
     flex: 1 0 auto;
-    /* text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.9), -5px -5px 3px rgba(0, 0, 0, 0.9); */
-}
+	margin-bottom: 90px; !important
+	flex: unset; !important
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.9), -5px -5px 3px rgba(0, 0, 0, 0.9);
+} */
 
 
 
@@ -762,7 +764,7 @@ body.blocked {
     display:flex;
     align-items:center;
     justify-content:center;
-    z-index: 999999999;       /* 🔥 OCULTA LA WEB Y CAPTURA LOS CLICS */
+    z-index: 999999999;       /* OCULTA LA WEB Y CAPTURA LOS CLICS */
     opacity:1;
     transition:.6s ease;
 }
@@ -791,4 +793,53 @@ body.blocked{
 /* ❄ Pausa todas las animaciones mientras la intro está activa */
 body.blocked * {
     animation-play-state: paused !important;
+}
+
+/* alturas */
+/* 
+ section {
+    min-height: 60vh;
+    height: auto;
+    padding: 40px 0;
+} 
+ */
+
+ /* ============ SECCIÓN REGALO MÁS COMPACTA ============ */
+
+/* Hace la sección más chica */
+/* section.regalo {
+    min-height: 50vh !important;
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    justify-content: flex-start !important;
+}  */
+
+/* Línea decorativa — menos espacio alrededor */
+/* .line-regalo {
+    margin: 20px 0 !important;
+    flex: unset !important;
+} */
+
+/* Título */
+/* section.regalo .header-regalo {
+    margin-bottom: 10px !important;
+    flex: unset !important;
+}  */
+
+/* Párrafos o textos */
+/* .regalo p {
+    margin: 10px 0 !important;
+    flex: unset !important;
+}  */
+
+/* Botón (si hay) */
+/* section.regalo .espacio_btn {
+    flex: unset !important;
+    margin-top: 20px !important;
+}*/
+
+#startBtn{
+    font-size: 1.2rem;     /* antes estaba mucho más grande */
+    padding: 10px 18px;    /* reduce el tamaño del botón */
+    border-radius: 8px;   /* un poco más sutil */
 }
